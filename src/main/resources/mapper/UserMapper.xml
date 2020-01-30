@@ -11,5 +11,9 @@
                 (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified});
     </insert>
 
+    <select id="findByToken" parameterType="String" resultType="life.majiang.community.model.User">
+
+        select * from community where token=#{token};
+    </select>
 
 </mapper>
