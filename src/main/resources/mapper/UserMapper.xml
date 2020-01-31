@@ -6,14 +6,18 @@
 <mapper namespace="life.majiang.community.mapper.UserMapper">
 
     <insert id="insertUser" parameterType="life.majiang.community.model.User">
-        insert into community (name,accountId,token,gmtCreate,gmtModified)
+        insert into user (name,accountId,token,gmtCreate,gmtModified,avatarurl)
         values
-                (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified});
+                (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified},#{avatarUrl});
     </insert>
 
     <select id="findByToken" parameterType="String" resultType="life.majiang.community.model.User">
 
-        select * from community where token=#{token};
+        select * from user where token=#{token};
+    </select>
+
+    <select id="findByAccountid" resultType="life.majiang.community.model.User" parameterType="int">
+        select * from user where accountId=#{id};
     </select>
 
 </mapper>

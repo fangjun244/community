@@ -9,8 +9,14 @@
 
         insert into
             question
-             (title,description,gmt_create,gmt_modified,creator,comment_count,view_count,like_count,tag)
+             (title,description,gmtcreate,gmtmodified,creator,tag)
             values
-            (#{title},#{description},#{gmt_create},#{gmt_modified},#{creator},#{comment_count},#{view_count},#{like_count},#{tag});
+            (#{title},#{description},#{gmtcreate},#{gmtmodified},#{creator},#{tag});
     </insert>
+    
+    <select id="findlist" resultType="life.majiang.community.model.Question">
+        select * from question;
+    </select>
+
+
 </mapper>

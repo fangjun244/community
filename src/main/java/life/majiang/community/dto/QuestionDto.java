@@ -1,10 +1,8 @@
-package life.majiang.community.model;
+package life.majiang.community.dto;
 
-import lombok.Data;
+import life.majiang.community.model.User;
 
-@Data
-public class Question {
-
+public class QuestionDto {
     private Integer id;
     private String  title;
     private String  description;
@@ -15,7 +13,7 @@ public class Question {
     private Integer viewcount;
     private Integer likecount;
     private String  tag;
-
+    private User    user;
 
     public Integer getId() {
         return id;
@@ -95,5 +93,13 @@ public class Question {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
